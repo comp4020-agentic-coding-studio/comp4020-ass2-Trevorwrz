@@ -61,3 +61,11 @@ I verified correctness by running `pnpm check` after each content stage
 rather than at the end, which is how the YAML bug in week 3's frontmatter
 (an unquoted colon inside a list item) and the `.mdx` layout bug both
 surfaced as build failures instead of shipping silently.
+
+A final re-read before shipping caught a spec violation neither check
+could: the course code's last three digits had drifted to 122 somewhere
+before this record of commits begins. Diffing against the repo's own
+provisioning commit showed the actually-allocated digits are 000, so
+[`7d153d6`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Trevorwrz/commit/7d153d6)
+corrects the code to SLOP4000 — a reminder that some spec lines need
+checking against the repo's own history, not just against `pnpm check`.
