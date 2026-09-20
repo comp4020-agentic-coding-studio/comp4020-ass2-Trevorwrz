@@ -70,7 +70,8 @@ provisioning commit showed the actually-allocated digits are 000, so
 corrects the code to SLOP4000 — a reminder that some spec lines need
 checking against the repo's own history, not just against `pnpm check`.
 
-That re-read also added two checks to `spec/closure-studies.test.ts`: an
-assessment must due on/after any session it cites, and the live, defended
-Inquest is marked holistically while the two written pieces use named,
-weighted criteria.
+That re-read also added two checks to `spec/closure-studies.test.ts`
+([`54b87dc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Trevorwrz/commit/54b87dc)):
+an assessment must due on/after any session it cites, and the live,
+defended Inquest is marked holistically while the two written pieces use
+named, weighted criteria.
