@@ -6,6 +6,7 @@ interface ApiNode {
   id: string;
   type: string;
   title: string;
+  description: string;
   related: string[];
   meta?: Record<string, unknown>;
 }
@@ -52,6 +53,33 @@ describe("Closure Studies: the course's own claims", () => {
       for (const teacher of teachers) {
         expect(peopleIds.has(teacher), `${node.id} references unknown teacher "${teacher}"`).toBe(true);
       }
+    }
+  });
+
+  it("never sets an assessment due before the session it says to reread", () => {
+    const sessions = byType("sessions");
+    for (const assessment of byType("assessments")) {
+      const due = new Date(assessment.meta?.due as string);
+      for (const ref of assessment.related.filter((r) => r.startsWith("sessions/"))) {
+        const session = sessions.find((n) => n.id === ref);
+        expect(session, `${assessment.id} relates to unknown session "${ref}"`).toBeDefined();
+        const sessionDate = new Date(session?.meta?.date as string);
+        expect(
+          due.getTime(),
+          `${assessment.id} is due before ${ref}, which it depends on`,
+        ).toBeGreaterThanOrEqual(sessionDate.getTime());
+      }
+    }
+  });
+
+  it("marks the live, defended verdict holistically and the written checkpoints on weighted criteria", () => {
+    for (const assessment of byType("assessments")) {
+      const marking = assessment.meta?.marking as { mode: string } | undefined;
+      const isLiveDefence = /present|defend/i.test(assessment.description);
+      expect(
+        marking?.mode,
+        `${assessment.id}: a live, defended piece should be marked holistically, a written one on weighted criteria`,
+      ).toBe(isLiveDefence ? "holistic" : "weighted");
     }
   });
 });
