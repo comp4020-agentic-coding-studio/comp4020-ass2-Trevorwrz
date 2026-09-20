@@ -44,19 +44,21 @@ export const slopCourseMetaSchema = z
 // this API contract when the course is published.
 //
 // The code's last three digits were assigned to this repo when it was
-// provisioned, and no other course in the cohort has them. Change the first
-// digit to your course's level (and `level` to match); keep the other three.
-// STARTER_CONTENT: replace this course record, then remove this comment.
+// provisioned, and no other course in the cohort has them; kept as 122.
+// Level 4 (final-year undergraduate) fits a capstone-style practicum built
+// entirely around one piece of primary-source fieldwork.
 export const courseMeta = slopCourseMetaSchema.parse({
-  code: "SLOP1122",
-  title: "Course Title Goes Here",
-  session: "Semester 1",
-  year: 2027,
-  level: 1,
-  startDate: "2027-02-22",
-  endDate: "2027-05-28",
+  code: "SLOP4122",
+  title: "Closure Studies: Post-Mortems for Restaurants That Died",
+  session: "Semester 2",
+  year: 2026,
+  level: 4,
+  startDate: "2026-07-27",
+  endDate: "2026-10-23",
   description:
-    "One concise paragraph explaining what this course is, who it is for, " +
-    "and why somebody would choose to spend a semester taking it.",
-  tags: ["replace me"],
+    "Every closed restaurant leaves a trail: reviews, a delivery menu " +
+    "still online, a map pin marked permanently closed. This course reads " +
+    "that trail as an autopsy — one dead restaurant, one semester, through " +
+    "location, menu economics and the excuse everyone believed at first.",
+  tags: ["restaurants", "failure studies", "case study"],
 }) satisfies CourseMetaInput;
