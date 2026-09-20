@@ -2,7 +2,7 @@
 
 ## The course
 
-Closure Studies (SLOP4122): a semester spent on one closed restaurant,
+Closure Studies (SLOP4000): a semester spent on one closed restaurant,
 followed through location, menu, service and narrative until you can defend
 a verdict on why it died. Single-idea thread — every session, lecture and
 assessment traces back to "one specimen, followed all semester." Don't

@@ -2,7 +2,7 @@
 
 ## What I built
 
-Closure Studies (SLOP4122) is a course built around one idea: every closed
+Closure Studies (SLOP4000) is a course built around one idea: every closed
 restaurant leaves a trail, and reading that trail is a teachable skill. A
 student picks one specific, verifiably closed restaurant in week 1 and
 spends the whole semester on it — location economics, menu-as-financial-

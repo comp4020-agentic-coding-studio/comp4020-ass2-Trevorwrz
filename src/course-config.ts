@@ -44,11 +44,11 @@ export const slopCourseMetaSchema = z
 // this API contract when the course is published.
 //
 // The code's last three digits were assigned to this repo when it was
-// provisioned, and no other course in the cohort has them; kept as 122.
+// provisioned, and no other course in the cohort has them; kept as 000.
 // Level 4 (final-year undergraduate) fits a capstone-style practicum built
 // entirely around one piece of primary-source fieldwork.
 export const courseMeta = slopCourseMetaSchema.parse({
-  code: "SLOP4122",
+  code: "SLOP4000",
   title: "Closure Studies: Post-Mortems for Restaurants That Died",
   session: "Semester 2",
   year: 2026,
